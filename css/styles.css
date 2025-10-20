@@ -12,3 +12,11 @@ html { scroll-behavior: smooth; }
 .link{color:#111827}
 .stat{background:white;border:1px solid rgba(0,0,0,.06);padding:1rem 1.25rem;border-radius:.9rem;box-shadow:0 6px 18px rgba(0,0,0,.05)}
 .badge{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:999px;color:white;font-weight:700}
+
+.nav-cta { display:flex; gap:10px; align-items:center; }
+.btn-admin{
+  background:#111827; color:#fff; border-radius:999px; padding:10px 16px;
+  font-weight:700; box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+.btn-admin:hover{ filter:brightness(1.05); }
+@media (max-width:768px){ .nav-cta{ gap:8px; } }

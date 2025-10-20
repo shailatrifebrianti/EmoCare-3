@@ -257,3 +257,36 @@ h2 {
 
 .btn-edit:hover { background-color: #218838; }
 .btn-delete:hover { background-color: #c82333; }
+
+/* ===== Quiz Cards ===== */
+.qp-grid{display:grid; gap:16px; grid-template-columns:1fr; }
+@media(min-width:900px){ .qp-grid{grid-template-columns:1fr 1fr;} }
+
+.qp-card{
+  background:#fff; border:1px solid #f3d1e1; border-radius:16px;
+  padding:16px; box-shadow:0 8px 24px rgba(244,114,182,.08);
+}
+.qp-icon{font-size:22px; margin-bottom:6px}
+.qp-title{font-weight:800; font-size:16px; margin-bottom:4px}
+.qp-sub{color:#6b7280; font-size:13px; margin-bottom:12px}
+.qp-btn{background:#f472b6; border-radius:999px; padding:8px 14px}
+
+/* ===== Modal ===== */
+.qp-modal{position:fixed; inset:0; background:rgba(0,0,0,.24); display:flex; align-items:center; justify-content:center; padding:16px; z-index:40;}
+.qp-sheet{background:#fff; border-radius:16px; border:1px solid #f3d1e1; max-width:720px; width:100%; padding:16px;}
+.qp-sheet-hd{display:flex; align-items:center; justify-content:space-between; margin-bottom:8px}
+.qp-sheet-title{font-weight:800; font-size:18px}
+.qp-close{background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:6px 10px; cursor:pointer}
+
+.qp-progress{height:8px; background:#fce7f3; border-radius:999px; overflow:hidden; margin:8px 0 12px}
+.qp-bar{height:100%; width:0%; background:#f472b6; transition:width .25s ease}
+
+.qp-qtext{font-weight:700; margin:8px 0 10px}
+.qp-options{display:grid; gap:8px}
+.qp-opt{display:flex; align-items:center; gap:8px; border:1px solid #f3d1e1; border-radius:12px; padding:10px 12px}
+.qp-actions{display:flex; gap:8px; justify-content:flex-end; margin-top:12px}
+.qp-result{background:#fff; border:1px dashed #f3d1e1; border-radius:12px; padding:12px; margin-top:12px}
+.qp-score{font-weight:800; font-size:22px; color:#be185d; margin-bottom:4px}
+.qp-feedback{color:#374151; line-height:1.5}
+
+
