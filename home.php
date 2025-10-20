@@ -114,7 +114,7 @@ $res = $q->get_result(); while ($row=$res->fetch_assoc()) $items[]=$row; $q->clo
         <a href="#top">Beranda</a>
         <a href="#features">Fitur</a>
         <a href="#stats">Statistik</a>
-        <?php if ($isAdmin): ?><a href="admin.php" class="btn" style="margin-left:8px">Admin</a><?php endif; ?>
+        <?php if ($isAdmin): ?><a href="admin.php" class="btn ghost" style="margin-left:8px">Admin</a><?php endif; ?>
       </nav>
       <form action="backend/auth_logout.php" method="post" style="margin:0"><button class="ec-btn-outline">Keluar</button></form>
     </div>
@@ -150,31 +150,46 @@ $res = $q->get_result(); while ($row=$res->fetch_assoc()) $items[]=$row; $q->clo
     </section>
 
     <!-- KUIS PSIKOLOGI (HANYA 1 KARTU/ KATEGORI) -->
-    <section class="ec-card" id="quiz-cards" style="padding:16px;">
-      <h2 class="ec-section-title" style="margin-bottom:12px">Kuis Psikologi</h2>
-      <div class="qp-grid">
-        <!-- Self-Esteem -->
-        <article class="qp-card">
-          <div class="qp-title">Self-Esteem</div>
-          <div class="qp-sub">Penilaian kepercayaan diri & harga dirimu saat ini.</div>
-          <?php if ($qe_self): ?>
-            <a class="btn" href="play_quiz.php?cat=self_esteem">Mulai Kuis</a>
-          <?php else: ?>
-            <button class="btn" disabled>Tidak ada kuis aktif</button>
-          <?php endif; ?>
-        </article>
-        <!-- Kecemasan Sosial -->
-        <article class="qp-card">
-          <div class="qp-title">Kecemasan Sosial</div>
-          <div class="qp-sub">Ukur tingkat kecemasan saat berinteraksi sosial.</div>
-          <?php if ($qe_social): ?>
-            <a class="btn" href="play_quiz.php?cat=social_anxiety">Mulai Kuis</a>
-          <?php else: ?>
-            <button class="btn" disabled>Tidak ada kuis aktif</button>
-          <?php endif; ?>
-        </article>
+    <section class="ec-card qp-section" id="quiz-cards">
+  <h2 class="ec-section-title">Kuis Psikologi</h2>
+
+  <div class="qp-grid">
+    <!-- Self-Esteem -->
+    <article class="qp-card">
+      <header class="qp-header">
+        <span class="qp-icon">✨</span>
+        <h3 class="qp-title">Self-Esteem</h3>
+      </header>
+      <p class="qp-desc">Penilaian kepercayaan diri & harga dirimu saat ini.</p>
+
+      <div class="qp-actions">
+        <?php if ($qe_self): ?>
+          <a class="btn" href="play_quiz.php?cat=self_esteem">Mulai Kuis</a>
+        <?php else: ?>
+          <button class="btn" disabled>Tidak ada kuis aktif</button>
+        <?php endif; ?>
       </div>
-    </section>
+    </article>
+
+    <!-- Kecemasan Sosial -->
+    <article class="qp-card">
+      <header class="qp-header">
+        <span class="qp-icon">😶‍🌫️</span>
+        <h3 class="qp-title">Kecemasan Sosial</h3>
+      </header>
+      <p class="qp-desc">Ukur tingkat kecemasan saat berinteraksi sosial.</p>
+
+      <div class="qp-actions">
+        <?php if ($qe_social): ?>
+          <a class="btn" href="play_quiz.php?cat=social_anxiety">Mulai Kuis</a>
+        <?php else: ?>
+          <button class="btn" disabled>Tidak ada kuis aktif</button>
+        <?php endif; ?>
+      </div>
+    </article>
+  </div>
+</section>
+
 
     <!-- Mood Tracker -->
     <section id="mood-tracker" class="ec-mood-grid">

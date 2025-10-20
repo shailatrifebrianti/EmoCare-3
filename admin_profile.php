@@ -114,7 +114,7 @@ $CSRF=$_SESSION['csrf'];
       <section class="card">
         <div class="tabs" role="tablist" aria-label="Profil Admin Tabs">
           <button class="tab active" id="t1" data-tab="p1" role="tab" aria-selected="true">1. Profil</button>
-          <button class="tab" id="t2" data-tab="p2" role="tab" aria-selected="false">2. Rekam Aktivitas</button>
+          
           <button class="tab" id="t3" data-tab="p3" role="tab" aria-selected="false">3. Ganti Kata Sandi</button>
         </div>
 
@@ -155,14 +155,7 @@ $CSRF=$_SESSION['csrf'];
           </div>
         </div>
 
-        <!-- Panel 2: Rekam Aktivitas (placeholder) -->
-        <div class="panel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
-          <p class="muted">Log aktivitas admin (mis. membuat/mengedit kuis) bisa ditampilkan di sini.</p>
-          <ul style="margin:8px 0 0 18px">
-            <li>[Contoh] 2025-10-18 21:00 – Membuat kuis baru.</li>
-            <li>[Contoh] 2025-10-20 08:00 – Mengaktifkan kuis ID #12.</li>
-          </ul>
-        </div>
+        
 
         <!-- Panel 3: Ganti Password -->
         <div class="panel" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
