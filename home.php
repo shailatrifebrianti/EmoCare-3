@@ -182,7 +182,7 @@ $q->close();
         <a href="#top">Beranda</a>
         <a href="#features">Fitur</a>
         <a href="#stats">Statistik</a>
-        <?php if ($isAdmin): ?><a href="admin.php" class="btn ghost" style="margin-left:8px">Admin</a><?php endif; ?>
+        <a href="/emocare/admin/index.php">Admin</a>
       </nav>
       <form action="backend/auth_logout.php" method="post" style="margin:0"><button
           class="ec-btn-outline">Keluar</button></form>
