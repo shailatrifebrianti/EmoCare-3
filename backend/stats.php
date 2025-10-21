@@ -11,15 +11,15 @@ $counts = [
 ];
 
 $res = $mysqli->query("SELECT COUNT(*) AS c FROM pengguna WHERE peran='user'");
-$counts['totalUsers'] = intval(($res && ($row=$res->fetch_assoc())) ? $row['c'] : 0);
+$counts['totalUsers'] = intval(($res && ($row = $res->fetch_assoc())) ? $row['c'] : 0);
 
 $res = $mysqli->query("SELECT COUNT(*) AS c FROM moodtracker");
-$counts['totalMoods'] = intval(($res && ($row=$res->fetch_assoc())) ? $row['c'] : 0);
+$counts['totalMoods'] = intval(($res && ($row = $res->fetch_assoc())) ? $row['c'] : 0);
 
 $res = $mysqli->query("SELECT COUNT(*) AS c FROM jurnal_harian");
-$counts['totalJournals'] = intval(($res && ($row=$res->fetch_assoc())) ? $row['c'] : 0);
+$counts['totalJournals'] = intval(($res && ($row = $res->fetch_assoc())) ? $row['c'] : 0);
 
 $res = $mysqli->query("SELECT COUNT(*) AS c FROM hasil_kuis");
-$counts['totalQuizResults'] = intval(($res && ($row=$res->fetch_assoc())) ? $row['c'] : 0);
+$counts['totalQuizResults'] = intval(($res && ($row = $res->fetch_assoc())) ? $row['c'] : 0);
 
 echo json_encode($counts);

@@ -16,7 +16,8 @@ if ($mysqli->connect_errno) {
 }
 $mysqli->set_charset('utf8mb4');
 
-function require_login() {
+function require_login()
+{
   if (empty($_SESSION['user']['pengguna_id'])) {
     header('Location: ../login.html');
     exit;

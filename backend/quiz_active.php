@@ -6,15 +6,15 @@ header('Content-Type: application/json; charset=utf-8');
 $sql = "SELECT id, question_text, is_active, created_at FROM quiz_questions
         ORDER BY is_active DESC, id DESC LIMIT 1";
 $q = $mysqli->query($sql);
-$quiz = $q? $q->fetch_assoc() : null;
+$quiz = $q ? $q->fetch_assoc() : null;
 
-$out = ['quiz'=>null, 'options'=>[]];
+$out = ['quiz' => null, 'options' => []];
 if ($quiz) {
   $out['quiz'] = [
-    'id'=>(int)$quiz['id'],
-    'question_text'=>$quiz['question_text'],
-    'is_active'=>(int)$quiz['is_active'],
-    'created_at'=>$quiz['created_at'],
+    'id' => (int) $quiz['id'],
+    'question_text' => $quiz['question_text'],
+    'is_active' => (int) $quiz['is_active'],
+    'created_at' => $quiz['created_at'],
   ];
   $stmt = $mysqli->prepare("SELECT id, option_text, is_correct FROM quiz_options WHERE question_id=? ORDER BY id");
   $stmt->bind_param('i', $out['quiz']['id']);

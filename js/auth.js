@@ -23,13 +23,13 @@ const getAuthUser = () => { try { return JSON.parse(localStorage.getItem(AUTH_KE
 const clearAuth = () => localStorage.removeItem(AUTH_KEY);
 const isLoggedIn = () => !!getAuthUser();
 
-const redirectTo = (page, replace=false) => replace ? location.replace(page) : location.assign(page);
+const redirectTo = (page, replace = false) => replace ? location.replace(page) : location.assign(page);
 const pageName = () => (location.pathname.split('/').pop() || '').toLowerCase();
 
 function isGmail(email) {
   return typeof email === 'string' && email.trim().toLowerCase().endsWith('@gmail.com');
 }
-function hasSymbol(s){ return /[^A-Za-z0-9]/.test(s); }
+function hasSymbol(s) { return /[^A-Za-z0-9]/.test(s); }
 
 // =====================
 // Form detector (tidak ubah UI)
@@ -78,11 +78,11 @@ function attachLoginHandler() {
   const p = pageName();
   if (!form || p !== PAGES.LOGIN) return;
 
-  form.addEventListener('submit', function(e){
+  form.addEventListener('submit', function (e) {
     e.preventDefault(); // client-side only; tidak kirim ke server
 
-    const emailEl = pickInput(form, ['input[type="email"]','input[name*="email" i]','#email']);
-    const passEl  = pickInput(form, ['input[type="password"]','input[name*="pass" i]','#password']);
+    const emailEl = pickInput(form, ['input[type="email"]', 'input[name*="email" i]', '#email']);
+    const passEl = pickInput(form, ['input[type="password"]', 'input[name*="pass" i]', '#password']);
 
     const email = (emailEl?.value || '').trim();
     const password = (passEl?.value || '').trim();
@@ -106,15 +106,15 @@ function attachRegisterHandler() {
   const p = pageName();
   if (!form || p !== PAGES.REGISTER) return;
 
-  form.addEventListener('submit', function(e){
+  form.addEventListener('submit', function (e) {
     e.preventDefault(); // client-side only
 
-    const userEl = pickInput(form, ['input[name*="user" i]','input[name*="nama" i]','input#username','#regUsername']);
-    const emailEl= pickInput(form, ['input[type="email"]','input[name*="email" i]','#regEmail']);
-    const passEl = pickInput(form, ['input[type="password"]','input[name*="pass" i]','#regPassword']);
+    const userEl = pickInput(form, ['input[name*="user" i]', 'input[name*="nama" i]', 'input#username', '#regUsername']);
+    const emailEl = pickInput(form, ['input[type="email"]', 'input[name*="email" i]', '#regEmail']);
+    const passEl = pickInput(form, ['input[type="password"]', 'input[name*="pass" i]', '#regPassword']);
 
     const username = (userEl?.value || '').trim();
-    const email    = (emailEl?.value || '').trim();
+    const email = (emailEl?.value || '').trim();
     const password = (passEl?.value || '').trim();
 
     if (username.length < 8) return alert('Username minimal 8 huruf');

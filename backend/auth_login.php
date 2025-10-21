@@ -12,7 +12,8 @@ $password = $_POST['password'] ?? '';
 
 if ($identity === '' || $password === '') {
   $_SESSION['flash'] = 'Isi email/username dan password.';
-  header('Location: ../login.html'); exit;
+  header('Location: ../login.html');
+  exit;
 }
 
 // Tentukan login pakai email atau username
@@ -31,20 +32,23 @@ $stmt->close();
 
 if (!$user) {
   $_SESSION['flash'] = 'Akun tidak ditemukan.';
-  header('Location: ../login.html'); exit;
+  header('Location: ../login.html');
+  exit;
 }
 
 if (!password_verify($password, $user['password_hash'])) {
   $_SESSION['flash'] = 'Password salah.';
   echo "<script>alert('Pass wrong')</script>";
-  header('Location: ../login.html'); exit;
+  header('Location: ../login.html');
+  exit;
 }
 
 // Sukses
 $_SESSION['user'] = [
-  'pengguna_id' => (int)$user['pengguna_id'],
-  'nama'        => $user['nama'],
-  'email'       => $user['email'],
+  'pengguna_id' => (int) $user['pengguna_id'],
+  'nama' => $user['nama'],
+  'email' => $user['email'],
 ];
 
-header('Location: ../home.php'); exit;
+header('Location: ../home.php');
+exit;
